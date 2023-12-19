@@ -6,31 +6,37 @@
 //IMPORTANT: Code treatment makes it so the input and output consider the initial position as '1' rather then '0'
 
 
-
 public class FibbonacciBottomUp { 
+	//Main method
 	public static void main(String[] args)
-		{System.out.print(getFibbonacci(8));}
+		{System.out.print(getFibbonacci(8));} //Replace '8' with your desired position
 	
+	//Method responsible for treating the input and preparing the memo array
 	public static int getFibbonacci(int num) {		
-		//trata entrada, para em seguida retornar valor do fibbonacci
-		if(num>=3) {return calcFbn(num-1);} //caso normal
-		//caso input seja um dos 2 primeiros:
-		else if(num==1) {return 0;} //caso seja o 2o
-		else{return 1;} //caso seja o 1o
+		//First, treats input
+		if(num>=3) {return calcFbn(num-1);} //Usual case. The actual calculations happen in calcFbn()
+
+		//In case input is '1' or '2' (A.K.A. one of our first two positions):
+		else if(num>0) {return num-1;} //Returns the same number minus 1 (Since Fibbonacci positions 1 and 2 are, respectively, '0' and '1')
+		
+		//Invalid input case
+		else{return -1;} //If the given input is '0' or less, it is considered invalid, as we treat the first position as '1' (making all such cases equal to looking into negative positions)
 	}
 
+	//This method does the calculations
 	public static int calcFbn(int stop) {		
-		//array pra guardar fibbonacci
+		//Array made for keeping the previously calculated values
 		int[] arr = new int[stop+1];
-		arr[0]=0; arr[1]=1; //inicia com os primeiros 2 valores
+		arr[0]=0; arr[1]=1; //Leaves the first 2 positions of the Fibbonacci sequence (0,1) already set
 				
-		//calcula os valores da sequencia
+		//Iteratively calculates each value from the 3rd to the 'stop' position
 		for(int i=2;i<=stop;i++) {
 			arr[i] = arr[i-1]+arr[i-2];
-			System.out.println("posicao: " + (i+1) + ", valor: " + arr[i]); //printa
+
+			//Prints current position and its value
+			System.out.println("Current position: " + (i+1) + ", Value: " + arr[i]);
 		}
 		
-		//retorna o valor pedido
-		return arr[stop];
+		return arr[stop]; //Once done, returns the calculated value
 	}
 }
