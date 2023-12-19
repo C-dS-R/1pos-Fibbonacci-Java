@@ -1,4 +1,13 @@
-public class FibboBottom { 
+
+//Single Fibbonacci Position via Dynamic Programming (Bottom-Up Approach) 
+//This code returns only the value in a specific position of the Fibbonacci sequence, rather then the whole sequence up to that point.
+//However, it does print each found position during iteration
+
+//IMPORTANT: Code treatment makes it so the input and output consider the initial position as '1' rather then '0'
+
+
+
+public class FibbonacciBottomUp { 
 	public static void main(String[] args)
 		{System.out.print(getFibbonacci(8));}
 	
