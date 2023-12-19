@@ -1,7 +1,7 @@
 import java.util.Arrays; //Used to fill our memo array with a value (-1) used to indicate to-be-calculated spaces
 
 //Single Fibbonacci Position via Dynamic Programming (Top-Down Approach) 
-//This code returns only the number in a specific position in the Fibbonacci sequence, rather then the whole sequence up to that point.
+//This code returns only the value in a specific position of the Fibbonacci sequence, rather then the whole sequence up to that point.
 //However, it does print each found position during recursion
 
 //IMPORTANT: Code treatment makes it so the input and output consider the initial position as '1' rather then '0'
